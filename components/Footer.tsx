@@ -1,8 +1,9 @@
 export function Footer() {
   return (
     <footer>
-        test footer
-
+        <div>
+        test footer CreateBy
+        </div>
         
     </footer>
   )
