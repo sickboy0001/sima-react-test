@@ -1,5 +1,4 @@
-import React from "react";
-import styles from '@/styles/Home.module.css';
+import styles from './Headline.module.css';
 
 export function Headline(props) {
     console.log(props);
