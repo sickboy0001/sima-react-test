@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div>
-            index
+            index　テスト
         </div>
         <Links/>
         <Footer/>
