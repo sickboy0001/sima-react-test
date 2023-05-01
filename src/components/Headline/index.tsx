@@ -1,8 +1,8 @@
-import styles from './Headline.module.css';
+import styles from 'src/components/Headline/Headline.module.css';
 
 type thisprops = {
     page: string;
-    children: string;
+    children: React.ReactNode;
   };
   
 export function Headline(props:thisprops) {
