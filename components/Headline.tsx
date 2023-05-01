@@ -1,7 +1,12 @@
 import styles from './Headline.module.css';
 
-export function Headline(props) {
-    console.log(props);
+type thisprops = {
+    page: string;
+    children: string;
+  };
+  
+export function Headline(props:thisprops) {
+    // console.log(props);
     return (
         <div>
             <h1 className={styles.title}>
@@ -11,7 +16,6 @@ export function Headline(props) {
                 Get stated by editing  {props.children}              
             </p>
         </div>
-          
     )
   };
   
