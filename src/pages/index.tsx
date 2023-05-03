@@ -7,11 +7,24 @@ import { useCallback, useEffect, useState } from 'react'
 
 export default function Home() {
 
-  const [count,setCount]  =useState(1)
-  const handleClick = (e:any)=>  {
-    setCount((count)=>count*2)
-    setCount((count)=>count*2)
-  };
+  const [count,setCount]  =useState(1)//状態？
+  const handleClick = useCallback(
+    //再生成？
+    (e:any)=>  {
+      console.log(count)
+      if(count<100){
+        setCount((foo)=>foo*2)
+      }
+    },[count]//意識する必要ない。レスポンスのために最適化する設定ぽい？
+  );
+  
+  useEffect(()=> {
+    // console.log(`マウント時:${count}`)
+    document.body.style.backgroundColor = "lightblue";
+    return()=>{
+      document.body.style.backgroundColor = "";
+      // console.log(`アンマウント時:${count}`)
+    }},[])
 
   return (
     <div className={styles.container}>
