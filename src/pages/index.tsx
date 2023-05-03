@@ -7,35 +7,53 @@ import { useCallback, useEffect, useState } from 'react'
 
 export default function Home() {
 
+
   const [count,setCount]  =useState(1)//状態？
+  const [text,setText] = useState("")
+  const [isShow,setIsShow] = useState(true)
+  const handleDisplay = () => {
+    setIsShow(isShow=> ! isShow)
+  };
   const handleClick = useCallback(
-    //再生成？
     (e:any)=>  {
-      console.log(count)
       if(count<100){
         setCount((foo)=>foo*2)
       }
     },[count]//意識する必要ない。レスポンスのために最適化する設定ぽい？
   );
-  
+
+  const handelChange=useCallback((e:any)=>{
+    if(e.target.value.length>10){
+      alert("10文字以内にしてください")
+      return
+    }
+    setText(e.target.value.trim());
+  },[])
+
   useEffect(()=> {
-    // console.log(`マウント時:${count}`)
     document.body.style.backgroundColor = "lightblue";
     return()=>{
       document.body.style.backgroundColor = "";
-      // console.log(`アンマウント時:${count}`)
     }},[])
 
+  // console.log(text);
   return (
     <div className={styles.container}>
       <Head>
         <title>Index</title>
       </Head>
       <Header/>
-      <h1>{count}</h1>
-      <button
-        onClick={handleClick}
-      >button</button>
+      <div>
+          <button onClick={handleDisplay}>
+          {!isShow ? "表示":"非表示"}        
+          </button>
+      </div>  
+      {isShow ? <h1>{count}</h1>:null}
+      <button onClick={handleClick}>button</button>
+
+      <input type="text" value={text} 
+        onChange={handelChange}
+        />
       <Main page="index"/>
       <Footer/>
     </div>

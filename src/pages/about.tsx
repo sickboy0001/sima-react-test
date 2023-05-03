@@ -9,13 +9,6 @@ import { useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  // useEffect(()=> {
-  //   document.body.style.backgroundColor = "lightyellow";
-
-  //   return()=>{
-  //     document.body.style.backgroundColor = "";
-  //   }
-  // },[])
   return (
     <>
       <Head>
@@ -24,7 +17,6 @@ export default function Home() {
       <Header/>
       <Main page="about"/>
       <Footer/>
-
-</>
+    </>
   )
 }
