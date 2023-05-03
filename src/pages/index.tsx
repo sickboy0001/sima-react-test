@@ -9,14 +9,14 @@ import { useCallback, useEffect } from 'react'
 
 
 export default function Home() {
-  // const foo = 1
-  // //再描画の回避＝UseCallBack
-  // const handleClick=useCallback((e:any)=>  {
-  //   console.log(e.target)
-  //   e.preventDefault();
-  //   // aleart(foo);
-  //   alert(foo)
-  // },[]);
+  const foo = 1
+  //再描画の回避＝UseCallBack
+  const handleClick=useCallback((e:any)=>  {
+    console.log(e.target)
+    e.preventDefault();
+    // aleart(foo);
+    alert(foo)
+  },[]);
   //マウント、アンマウント　ライフサイクル
 
 
@@ -32,10 +32,10 @@ export default function Home() {
         <title>Index</title>
       </Head>
       <Header/>
-      {/* <a 
+      <a 
         href='/about'
         onClick={handleClick}
-      >button</a> */}
+      >button</a>
       <Main page="index"/>
       <Footer/>
     </div>
