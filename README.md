@@ -21,10 +21,11 @@ CSS は検討中。Bootstrap は不向き？（会社で使っているので知
 
 ## 知識レベル
 
-JavaServlet 1/10
-PythonDjango 1/10
-PythonFastApi 2/10
-Rails 0.5/10
-vQuery 5/10
+JavaServlet 1/10  
+PythonDjango 1/10  
+PythonFastApi 2/10  
+Rails 0.5/10  
+SQLServer 6.5/10  
+Query 5/10  
 付随した、Html や JQuery、Css などは調整程度知識あり。
 多分数字だと 0.01 とかになりそう・・・

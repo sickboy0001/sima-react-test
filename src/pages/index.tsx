@@ -50,7 +50,6 @@ export default function Home() {
       </div>  
       {isShow ? <h1>{count}</h1>:null}
       <button onClick={handleClick}>button</button>
-
       <input type="text" value={text} 
         onChange={handelChange}
         />
