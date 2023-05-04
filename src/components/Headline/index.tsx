@@ -1,11 +1,7 @@
 import styles from 'src/components/Headline/Headline.module.css';
 
-type thisprops = {
-    page: string;
-    children: React.ReactNode;
-  };
   
-export function Headline(props:thisprops) {
+export function Headline(props:any) {
     // console.log(props);
     return (
         <div>
@@ -15,6 +11,9 @@ export function Headline(props:thisprops) {
             <p className={styles.description}>
                 Get stated by editing  {props.children}              
             </p>
+            <div>
+            <button onClick={props.handleReduce}>減らす</button>
+            </div>
         </div>
     )
   };
