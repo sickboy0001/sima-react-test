@@ -3,17 +3,21 @@ import styles from '../styles/Home.module.css'
 import { Footer } from "../components/Footer"
 import { Main } from '../components/Main'
 import { Header } from '../components/Header'
-import { useCounter } from 'src/hooks/useCounter'
-import { useInputArray } from 'src/hooks/useInputArray'
-import { useBgLigthBlue } from 'src/hooks/useBgLigthBlue'
 
 
-export default function Home() {
-  const {count,isShow,handleClick,handleDisplay} =useCounter();
-  const {text,array,handleAdd,handleChange} =useInputArray();
-  useBgLigthBlue();
+export default function Home(props) {
+  const{
+    count,
+    isShow,
+    handleClick,
+    handleDisplay,
+    text,
+    array,
+    handleChange,
+    handleAdd,
+  }=props;
 
-  // console.log(text);
+  console.log(props.foo);
   return (
     <div className={styles.container}>
       <Head>

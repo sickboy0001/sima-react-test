@@ -8,14 +8,21 @@ import { useCounter } from 'src/hooks/useCounter'
 import { useInputArray } from 'src/hooks/useInputArray'
 import { useBgLigthBlue } from 'src/hooks/useBgLigthBlue'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
-export default function About() {
-  
-  const {count,isShow,handleClick,handleDisplay} =useCounter();
-  const {text,array,handleAdd,handleChange} =useInputArray();
-  useBgLigthBlue();
+export default function About(props) {
 
+  const{
+    count,
+    isShow,
+    handleClick,
+    handleDisplay,
+    text,
+    array,
+    handleChange,
+    handleAdd,
+  }=props;
   return (
     <>
       <Head>
