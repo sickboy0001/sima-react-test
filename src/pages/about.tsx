@@ -33,7 +33,7 @@ const About =(props:any)=> {
           </button>
         </div>
         <ul>
-          {props.array.map(item => {
+          {props.array.map((item:string) => {
             return(
               <li key={item}>{item}</li>
             )
