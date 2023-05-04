@@ -1,8 +1,14 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export const useCounter =()=>{
     const [count,setCount]  =useState(1)//状態？
     const [isShow,setIsShow] = useState(true)
+
+    
+    const doubleCount = useMemo(()=>
+    {
+      return count*2
+    },[count]);
   
     const handleDisplay = () => {
       setIsShow(prevIsShow=> ! prevIsShow)
@@ -16,5 +22,5 @@ export const useCounter =()=>{
       },[count]//意識する必要ない。レスポンスのために最適化する設定ぽい？
     );
   
-    return {count,isShow,handleClick,handleDisplay};
+    return {count,doubleCount , isShow,handleClick,handleDisplay};
   };

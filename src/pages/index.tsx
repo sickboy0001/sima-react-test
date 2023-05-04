@@ -8,6 +8,7 @@ import { Header } from '../components/Header'
 export default function Home(props) {
   const{
     count,
+    doubleCount,
     isShow,
     handleClick,
     handleDisplay,
@@ -26,10 +27,10 @@ export default function Home(props) {
       <Header/>
 
       <div>
-          {isShow ? <h1>{count}</h1>:null}
           <button onClick={handleDisplay}>
           {!isShow ? "表示":"非表示"}        
           </button>
+          {isShow ? <h1>{count} - {doubleCount}</h1>:null}
       </div>  
       <button onClick={handleClick}>button</button>
 
