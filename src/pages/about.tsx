@@ -6,7 +6,7 @@ import { Footer } from 'src/components/Footer'
 import { Header } from 'src/components/Header'
 import { useCounter } from 'src/hooks/useCounter'
 import { useInputArray } from 'src/hooks/useInputArray'
-import { useBgLigthBlue } from 'src/hooks/useBgLigthBlue'
+import { useBgLigthBlue } from 'src/hooks/useBgColor'
 
 
 const inter = Inter({ subsets: ['latin'] })
