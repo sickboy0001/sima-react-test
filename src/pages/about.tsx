@@ -4,26 +4,12 @@ import { Inter } from 'next/font/google'
 import { Main } from 'src/components/Main'
 import { Footer } from 'src/components/Footer'
 import { Header } from 'src/components/Header'
-import { useCounter } from 'src/hooks/useCounter'
-import { useInputArray } from 'src/hooks/useInputArray'
-import { useBgLigthBlue } from 'src/hooks/useBgColor'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function About(props) {
-
-  const{
-    count,
-    doubleCount,
-    isShow,
-    handleClick,
-    handleDisplay,
-    text,
-    array,
-    handleChange,
-    handleAdd,
-  }=props;
+const About =(props:any)=> {
   return (
     <>
       <Head>
@@ -32,22 +18,22 @@ export default function About(props) {
       <Header/>
 
       <div>
-          <button onClick={handleDisplay}>
-          {!isShow ? "表示":"非表示"}        
+          <button onClick={props.handleDisplay}>
+          {!props.isShow ? "表示":"非表示"}        
           </button>
       </div>  
-      {isShow ? <h1>{count} - {doubleCount}</h1>:null}
-      <button onClick={handleClick}>button</button>
-      <input type="text" value={text} 
-        onChange={handleChange}
+      {props.isShow ? <h1>{props.count} - {props.doubleCount}</h1>:null}
+      <button onClick={props.handleClick}>button</button>
+      <input type="text" value={props.text} 
+        onChange={props.handleChange}
         />
         <div>
-          <button onClick={handleAdd}>
+          <button onClick={props.handleAdd}>
             handleaAdd
           </button>
         </div>
         <ul>
-          {array.map(item => {
+          {props.array.map(item => {
             return(
               <li key={item}>{item}</li>
             )
@@ -59,3 +45,5 @@ export default function About(props) {
     </>
   )
 }
+export default About;
+

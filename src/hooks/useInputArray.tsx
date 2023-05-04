@@ -9,7 +9,8 @@ export const useInputArray = () =>{
         setArray(
           (prevArray:any)=>
             {
-              if(prevArray.some((item: string) => item === text))
+              //配列の中に文字列なので、ＩｎｃｌｕｄｅでＯＫ！
+              if(prevArray.includes(text))
               {
                 alert("同じ要素があります。")
                 return prevArray; 
@@ -28,9 +29,6 @@ export const useInputArray = () =>{
     }
     setText(e.target.value.trim());
   },[])
-
-
-
   return {text,array,handleAdd,handleChange}
 
 }
